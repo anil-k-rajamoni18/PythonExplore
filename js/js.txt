@@ -1,0 +1,20 @@
+alert("hellow world")
+
+
+
+ https://git.heroku.com/flask-application90.git
+
+
+
+
+https://flask-application90.herokuapp.com/ | https://git.heroku.com/flask-application90.git
+
+
+
+web: gunicorn app:app
+Procfile
+
+
+git push heroku main
+
+
