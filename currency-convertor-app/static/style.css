@@ -1,0 +1,104 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(92, 204, 204);
+}
+
+.header{
+    background-color: rgb(190, 218, 218);
+
+    height:100vh;
+    background-size: cover;
+    background-image:linear-gradient( to right bottom ,
+    rgba(173, 228, 234, 0.6),
+    rgba(164, 215, 222, 0.6)), url("mediamodifier-I3HPUolh5hA-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    /* clip property is to cut some edges depending on x,y values */
+    clip-path: polygon(0 0,100% 0,100% 60vh,0 100%);
+    position: relative;
+}
+
+form{
+
+    width:60%;
+    height:40vh;
+    margin:10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.heading-main{
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 10px;
+    animation-name: moveInleft;
+    animation-duration: 2s;
+    color: rgb(112, 110, 110);
+    margin-bottom: 1em;
+    padding-top: 10em;
+}
+
+@keyframes moveInleft{
+    /* start point */
+    0%{
+        opacity:0;
+        /* translate x becuase we want to shift text fron left to right and left mean negative value */
+        transform: translateX(-100px);
+    }
+    /* middle point */
+    50%{
+        /* positive value means shift to left and from right to left positive value */
+        transform: translateX(10px);
+
+    }
+    /* endpoint */
+    100%{
+        opacity:1;
+        /* translate 0 means back to origin */
+        transform: translate(0px);
+    }
+}
+
+
+input,select,button{
+    width:20em;
+    height:4em;
+    border-radius: 10px;
+    border: 1px soild grey;
+  
+}
+
+button.btn-warning,#change_from,#change_to,.input-group.flex-nowrap{
+    width:40%;
+
+
+}
+
+button.btn-warning{
+    background-color: rgb(142, 206, 206);
+    border: none;
+    margin-bottom: 10px;
+    color: rgb(59, 59, 59);
+}
+button.btn-warning:hover{
+    background-color: rgb(73, 183, 183);
+    color: rgb(88, 86, 86);
+}
+option{
+    color: rgb(59, 59, 59);
+}
+.form-select.form-select-lg{
+    padding-top: 0;
+    padding-bottom: 0;
+
+}
+
+
