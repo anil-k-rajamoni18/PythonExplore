@@ -24,7 +24,7 @@ def to_get_currency(from_currency,to_currency,amt):
 
     print(resp)
     
-    return resp
+    return resp['amount']
 
 @app.route("/")
 def home():
@@ -32,14 +32,12 @@ def home():
 
 @app.route("/convert",methods=["GET","POST"])
 def convert_currency():
-    result={"amount":""}
     if request.method == "POST":
         from_currency_country = request.form["from_currency_country"]
         to_currency_country = request.form["to_currency_country"]
         amount_currency = request.form["amount_currency"]
         amount_currency = float(amount_currency)
-        result = to_get_currency(from_currency_country,to_currency_country,amount_currency)
-        result["amount_currency"] = amount_currency
+        result= round(to_get_currency(from_currency_country,to_currency_country,amount_currency),2)
     return  render_template("index.html",result=result,time=datetime.now().strftime("%m-%D-%Y %H-%M-%S"))
 
 if(__name__)=="__main__":
